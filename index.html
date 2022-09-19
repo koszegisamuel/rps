@@ -8,8 +8,93 @@
 
 <style>
 
+    .header {
+        width: 1920px;
+        height: 120px;
+        background-color: #9c373d;
+        margin: 0;
+    }
+
+    .title {
+        color: #f2d99f;
+        font-size: 72px;
+        margin: 0px;
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .mainbody {
+        background-color: #afb98b;
+        width: 1920px;
+        margin: 0;
+    }
+
+    .subtitle {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #9c373d;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 40px;
+        font-style: italic;
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1000px;
+        gap: 180px;
+        transition: all .07s ease;
+    }
+
+    img {
+        border: solid #2b2f37  3px;
+    }
+
+    img:hover {
+        transform: scale(1.01);
+        border: solid #9c373d 4px;
+    }
+
+    .round-displays {
+        display: flex;
+        justify-content: space-around;
+        color: #2b2f37;
+        font-size: 40px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .roundresult {
+        text-align: center;
+        color: #2b2f37;
+        font-size: 40px;
+        margin: 0;
+        padding: 0;
+       
+    }
+
+    .choices {
+        display: flex;
+        justify-content: space-around;
+        align-self: center;
+        color: #2b2f37;
+        font-size: 26px;
+    }
+
+    .footer {
+        width: 1920px;
+        height: 70px;
+        background-color: #2b2f37;
+        display: flex;
+        justify-content: center;
+    }
+
     #yourscore {
         color: darkgreen;
+        
     }
 
     #computerscore {
@@ -20,22 +105,67 @@
         color: white;
         background-color: black;
     }
+
+    #restart{
+        font-size: 30px;
+        border-radius: 8px;
+        height: 40px;
+        background-color: #9c373d;
+        color: #f2d99f;
+        margin-top: 15px;
+        border-color: #f2d99f;
+        font-style: italic;
+        
+    }
+
 </style>
 
 </head>
 <body>
+    <div class ="header">
+        <h1 class = "title">ROCK PAPER SCISSORS GAME</h1>
+    </div>
+   
+    <div class ="mainbody">
+         <h3 class="subtitle">Get ready! A game until 5!</h3>
+         <div class="round-displays">
+            <h2 class="score">Your score: <span id="yourscore"></span></h2>
+            <h2 class="score">Computer: <span id="computerscore"></span></h2>
+         </div>
+         
+         <div class="roundresult">
+            <h2>Result: <span id="result"></span></h2>
+         </div>
 
-      
-    <h2>User Choice: <span id="user-choice"></span></h2>
-    <h2>Computer Choice: <span id="computer-choice"></span></h2>
-    <h2>Result: <span id="result"></span></h2>
+          <div class ="image-container">
+             <img id="rock" src="images/rock.png">
+             <img id="paper" src="images/paper.png">
+             <img id="scissors" src="images/scissors.png"> 
+             
+          </div>
+          
+          <div class="choices">
+            <h2>User choice: <span id="user-choice"></span></h2>
+            <h2>Computer choice: <span id="computer-choice"></span></h2>
+         </div>
+          
+
+        
+        </div>       
     
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
+          
+</div>
 
-    <h2>Your score: <span id="yourscore"></span></h2>
-    <h2>Computer's: <span id="computerscore"></span></h2>
+<div class ="footer">
+    <button id ="restart">wampdev</button>
+</div>
+
+   <!--  <button id ="rock"> Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button> -->
+    
+
+    
 
     <h2> <span id="end-result"></span></h2>
 

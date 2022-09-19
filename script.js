@@ -1,16 +1,18 @@
 const computerChoiceDisplay = document.getElementById("computer-choice")
 const userChoiceDisplay = document.getElementById("user-choice")
 const resultDisplay = document.getElementById("result")
-const possibleChoices = document.querySelectorAll("button")
+const possibleChoices = document.querySelectorAll("img")
 const endResultDisplay = document.getElementById("end-result")
 const yourScoreDisplay = document.getElementById("yourscore")
 const computerScoreDisplay = document.getElementById("computerscore")
+const results = document.querySelector("button")
 
 let computerChoice;
 let userChoice;
 let result;
 let playerScore = 0;
 let computerScore = 0;
+
 
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click',(e) =>{
@@ -34,7 +36,15 @@ function generateComputerChoice() {
         computerChoice = "paper"
     }
     computerChoiceDisplay.innerHTML = computerChoice;
+    
+    
+    
 }
+
+// choice desplay
+
+
+
 
 function getResult() {
     if (computerChoice === userChoice) {
@@ -67,21 +77,22 @@ function getResult() {
     }
     
     resultDisplay.innerHTML = result;
-    yourScoreDisplay.innerHTML = ("Your score is " + playerScore)
-    computerScoreDisplay.innerHTML = ("The computer's score is " + computerScore)  
+    yourScoreDisplay.innerHTML = (playerScore)
+    computerScoreDisplay.innerHTML = (computerScore)  
 
     
 
-    if (playerScore === 5){
-        endResultDisplay.innerHTML = "Congratulations you won the game. Please refresh to start again"
-        buttonDisable()
-    }
-
-    if (computerScore === 5){
-        endResultDisplay.innerHTML = "Unfortunately you lost the game. Please refresh to start again"
-        buttonDisable()
-    }
+    if (playerScore >= 5){
+        endResultDisplay = alert("Congratulations you won the game. Please refresh to start again")
+            } 
+    if (computerScore >= 5){
+        endResultDisplay = alert("Unfortunately you lost the game. Please refresh to start again")
+        
+    } 
 }
+
+
+
 
 function buttonDisable() {
     possibleChoices.forEach(elem=> {
